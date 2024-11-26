@@ -4,7 +4,7 @@ import Hoobank from "../assets/projects/Hoobank.png";
 import Realestate from "../assets/projects/Real-estate.png";
 import travelList from "../assets/projects/travel-list.png";
 import eatNsplit from "../assets/projects/eat-n-split.png";
-import Glovo from "../assets/projects/Glovo-clone.png";
+import Food from "../assets/projects/food.png";
 
 const Projects = () => {
   return (
@@ -190,19 +190,19 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Glovo Cloned App */}
+          {/* Food App */}
           <div
-            style={{ backgroundImage: `url(${Glovo})` }}
+            style={{ backgroundImage: `url(${Food})` }}
             className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
             <div className="opacity-0 group-hover:opacity-100">
               <span className="text-2xl font-bold text-white tracking-wider">
-                Glovo App (Cloned)
+                Food App
               </span>
               <div className="pt-8 text-center">
                 <a
-                  href="https://glovo-app-clone.vercel.app/"
+                  href="https://food-app-red-ten.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -211,7 +211,7 @@ const Projects = () => {
                   </button>
                 </a>
                 <a
-                  href="https://github.com/Jifoltech/Glovo-App-Clone"
+                  href="https://github.com/Jifoltech/Food-App"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
