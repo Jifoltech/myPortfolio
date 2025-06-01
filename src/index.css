@@ -5,26 +5,100 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 @layer base {
-  body {
-    @apply font-[Poppins];
+  html {
+    @apply scroll-smooth;
   }
+  
+  body {
+    @apply font-[Poppins] overflow-x-hidden;
+  }
+
   li {
-    @apply px-4;
-    @apply cursor-pointer;
+    @apply px-4 cursor-pointer hover:scale-105 transition-transform duration-200;
   }
 }
 
+@layer components {
+  .container-padding {
+    @apply px-4 sm:px-6 md:px-8 lg:px-16;
+  }
+
+  .section-spacing {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+
+  .heading-primary {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6;
+  }
+
+  .heading-secondary {
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 sm:mb-4;
+  }
+
+  .paragraph {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+}
+
+@layer components{
 .content-div {
+  @apply relative overflow-hidden rounded-lg shadow-lg;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 250px;
+  transition: transform 0.3s ease;
 }
 
 .content-div:hover {
+  @apply transform scale-105;
   background-image: linear-gradient(
     to right,
     rgba(112, 157, 255, 0.8),
     hsla(242, 74%, 61%, 0.8)
-  ) !important;
+  );
+}
+
+/* Responsive Navigation */
+.mobile-nav {
+  @apply fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-300;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
+/* Smooth transitions */
+.fade-in {
+  @apply opacity-0 transition-opacity duration-500;
+}
+
+.fade-in.visible {
+  @apply opacity-100;
+}
+
+/* Responsive grid layouts */
+.grid-responsive {
+  @apply grid gap-4 sm:gap-6 md:gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full hover:bg-gray-500;
+}
 }

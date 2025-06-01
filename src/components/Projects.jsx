@@ -1,233 +1,103 @@
 import React from "react";
-import pizzaMenu from "../assets/projects/pizza-menu.png";
 import Hoobank from "../assets/projects/Hoobank.png";
+import pizzaMenu from "../assets/projects/pizza-menu.png";
 import Realestate from "../assets/projects/Real-estate.png";
 import travelList from "../assets/projects/travel-list.png";
 import eatNsplit from "../assets/projects/eat-n-split.png";
 import Food from "../assets/projects/food.png";
 
+const projectData = [
+  {
+    title: "Hoobank Application",
+    image: Hoobank,
+    demo: "https://hoobank-project-ochre.vercel.app/",
+    code: "https://github.com/Jifoltech/Hoobank-Project",
+    textColor: "text-white",
+  },
+  {
+    title: "Pizza-menu App",
+    image: pizzaMenu,
+    demo: "https://pizza-menu-pied.vercel.app/",
+    code: "https://github.com/Jifoltech/pizza-menu",
+    textColor: "text-black",
+  },
+  {
+    title: "Real-estate App",
+    image: Realestate,
+    demo: "https://real-estate-react-app-pi.vercel.app/",
+    code: "https://github.com/Jifoltech/Real-Estate-React-App",
+    textColor: "text-white",
+  },
+  {
+    title: "Travel List App",
+    image: travelList,
+    demo: "https://travel-list-rho-gray.vercel.app/",
+    code: "https://github.com/Jifoltech/Travel-list",
+    textColor: "text-white",
+  },
+  {
+    title: "Eat-N-Split App",
+    image: eatNsplit,
+    demo: "https://eat-n-split-blush-three.vercel.app/",
+    code: "https://github.com/Jifoltech/Eat-N-Split",
+    textColor: "text-black",
+  },
+  {
+    title: "Food App",
+    image: Food,
+    demo: "https://food-app-red-ten.vercel.app/",
+    code: "https://github.com/Jifoltech/Food-App",
+    textColor: "text-white",
+  },
+];
+
 const Projects = () => {
   return (
-    <div
+    <section
       name="projects"
-      className="bg-[#0a192f] w-full h-screen text-gray-300 pb-32"
+      className="bg-[#0a192f] w-full min-h-screen text-gray-300 py-16"
     >
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+      <div className="max-w-[1000px] mx-auto px-4">
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-[#64ffda] text-gray-300">
+          <p className="text-3xl sm:text-4xl font-bold inline border-b-4 border-[#64ffda]">
             Projects
           </p>
-          <p className="py-6"> Check Out Some Of My Works.</p>
+          <p className="py-4 text-sm sm:text-base">
+            Check out some of my work below.
+          </p>
         </div>
 
-        {/* Grid  Container */}
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {/* Grid Item */}
-
-          {/* Hoobank */}
-          <div
-            style={{ backgroundImage: `url(${Hoobank})` }}
-            className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Hoobank Application
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://hoobank-project-ochre.vercel.app/"
-                  rel="noopener noreferrer"
-                  target="_blank"
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {projectData.map(({ title, image, demo, code, textColor }, index) => (
+            <div
+              key={index}
+              style={{ backgroundImage: `url(${image})` }}
+              className="relative group container rounded-md shadow-md shadow-[#040c16] flex justify-center items-center mx-auto h-64 bg-cover bg-center"
+            >
+              <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300 rounded-md flex flex-col justify-center items-center">
+                <span
+                  className={`text-lg sm:text-2xl font-bold ${textColor} tracking-wider text-center px-2`}
                 >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/Jifoltech/Hoobank-Project"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
+                  {title}
+                </span>
+                <div className="pt-4 flex flex-col sm:flex-row gap-2">
+                  <a href={demo} target="_blank" rel="noopener noreferrer">
+                    <button className="rounded-lg px-4 py-2 bg-white text-gray-700 font-semibold text-sm">
+                      Demo
+                    </button>
+                  </a>
+                  <a href={code} target="_blank" rel="noopener noreferrer">
+                    <button className="rounded-lg px-4 py-2 bg-white text-gray-700 font-semibold text-sm">
+                      Code
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* pizza-menu */}
-          <div
-            style={{ backgroundImage: `url(${pizzaMenu})` }}
-            className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Pizza-menu App
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://pizza-menu-pied.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/Jifoltech/pizza-menu"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Real-estate App */}
-          <div
-            style={{ backgroundImage: `url(${Realestate})` }}
-            className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Real-estate App
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://real-estate-react-app-pi.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/Jifoltech/Real-Estate-React-App"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Travel-list */}
-          <div
-            style={{ backgroundImage: `url(${travelList})` }}
-            className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Travel List App
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://travel-list-rho-gray.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/Jifoltech/Travel-list"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Eat-N-Split */}
-          <div
-            style={{ backgroundImage: `url(${eatNsplit})` }}
-            className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Eat-N-Split App
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://eat-n-split-blush-three.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/Jifoltech/Eat-N-Split"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Food App */}
-          <div
-            style={{ backgroundImage: `url(${Food})` }}
-            className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Food App
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://food-app-red-ten.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/Jifoltech/Food-App"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* End of Projects */}
+          ))}
         </div>
-        {/* Container ends here */}
       </div>
-    </div>
+    </section>
   );
 };
 

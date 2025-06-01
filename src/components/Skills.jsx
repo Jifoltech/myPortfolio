@@ -7,49 +7,41 @@ import Tailwind from "../assets/tailwind.png";
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full h-screen bg-[#0a192f] text-gray-300">
-      {/* Container */}
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full pb-32">
-        <div>
-          <p className="text-4xl font-bold inline border-b-4 border-[#64ffda]">
+    <section
+      name="skills"
+      className="w-full min-h-screen bg-[#0a192f] text-gray-300 py-16"
+    >
+      <div className="max-w-[1000px] mx-auto px-4 flex flex-col justify-center w-full h-full">
+        {/* Section Header */}
+        <div className="mb-8">
+          <p className="text-3xl sm:text-4xl font-bold inline border-b-4 border-[#64ffda]">
             Skills
           </p>
-          <p className="py-6">
-            These are some of the skills I have, and technologies I have worked
+          <p className="py-4 text-sm sm:text-base">
+            These are some of the skills I have and technologies I've worked
             with.
           </p>
         </div>
-        {/* Icon container */}
-        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8">
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={HTML} alt="HTML icon" className="w-20 mx-auto" />
-            <p className="my-4"> HTML</p>
-          </div>
 
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={CSS} alt="CSS icon" className="w-20 mx-auto" />
-            <p className="my-4"> CSS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img
-              src={JavaScript}
-              alt="JavaScript icon"
-              className="w-20 mx-auto"
-            />
-            <p className="my-4"> JavaScript</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={ReactImg} alt="React icon" className="w-20 mx-auto" />
-            <p className="my-4"> REACT</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={Tailwind} alt="Taiwind icon" className="w-20 mx-auto" />
-            <p className="my-4"> TAILWIND</p>
-          </div>
+        {/* Icons Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+          <SkillItem icon={HTML} name="HTML" />
+          <SkillItem icon={CSS} name="CSS" />
+          <SkillItem icon={JavaScript} name="JavaScript" />
+          <SkillItem icon={ReactImg} name="React" />
+          <SkillItem icon={Tailwind} name="Tailwind" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+
+// Reusable SkillItem component
+const SkillItem = ({ icon, name }) => (
+  <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500 rounded-md p-4 bg-[#0f1c34]">
+    <img src={icon} alt={`${name} icon`} className="w-20 mx-auto" />
+    <p className="mt-4 font-medium">{name}</p>
+  </div>
+);
 
 export default Skills;
