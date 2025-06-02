@@ -4,9 +4,9 @@ const About = () => {
   return (
     <section
       name="about"
-      className="w-full min-h-screen bg-[#0a192f] text-gray-300 py-16"
+      className="w-full py-20 md:py-24 bg-[#0a192f] text-gray-300"
     >
-      <div className="flex flex-col justify-center items-center w-full h-full px-4">
+      <div className="flex flex-col justify-center items-center w-full px-4">
         {/* Section Title */}
         <div className="max-w-[1000px] w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div className="sm:text-right pb-4">

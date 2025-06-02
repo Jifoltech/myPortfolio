@@ -4,8 +4,11 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 const Home = () => {
   return (
-    <section name="home" className="bg-[#0a192f] w-full h-screen">
-      <div className="max-w-[1000px] mx-auto px-6 sm:px-8 flex flex-col justify-center h-full">
+    <section
+      name="home"
+      className="bg-[#0a192f] w-full py-20 md:py-24 lg:py-28"
+    >
+      <div className="max-w-[1000px] mx-auto px-6 sm:px-8 flex flex-col justify-center">
         <p className="text-[#64ffda] text-base sm:text-lg md:text-xl">
           Hi, my name is
         </p>
@@ -24,7 +27,7 @@ const Home = () => {
         </p>
 
         <Link to="projects" smooth={true} duration={500}>
-          <button className="group text-white border-2 px-6 py-3 my-2 flex items-center hover:bg-[#64ffda] hover:border-[#64ffda] hover:text-black font-medium transition-all duration-300">
+          <button className="group text-white border-2 px-6 py-3 mt-4 flex items-center hover:bg-[#64ffda] hover:border-[#64ffda] hover:text-black font-medium transition-all duration-300">
             View Projects
             <span className="group-hover:rotate-90 duration-300">
               <HiArrowNarrowRight className="ml-3" />
